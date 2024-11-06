@@ -16,8 +16,7 @@ jobs:
           zip x96-${{ github.ref_name }}.zip -r ./
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
+        uses: softprops/action-gh-release@v2.0.9
         env:
           GITHUB_TOKEN: ${{ secrets.x96max_token }}
         with:
