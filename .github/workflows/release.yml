@@ -13,7 +13,7 @@ jobs:
       - name: ZIP Dir
         run: |
           cd ${{ github.workspace }}
-          zip x97-${{ github.ref }}.zip -r ./
+          zip x96-${{ github.ref_name }}.zip -r ./
 
       - name: Create Release
         id: create_release
@@ -25,3 +25,5 @@ jobs:
           release_name: Release ${{ github.ref_name }}
           body: |
             Changes in this Release
+          files: ${{ github.workspace }}/x96-${{ github.ref_name }}.zip
+
