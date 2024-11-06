@@ -12,7 +12,7 @@ jobs:
 
       - name: ZIP Dir
         run: |
-          cd ${{ github.workspace }}
+          cd ${{ github.workspace }}/custom_components/x96
           zip x96-${{ github.ref_name }}.zip -r ./
 
       - name: Create Release
@@ -20,5 +20,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.x96max_token }}
         with:
-          files: ${{ github.workspace }}/x96-${{ github.ref_name }}.zip
+          files: ${{ github.workspace }}/custom_components/x96/x96-${{ github.ref_name }}.zip
 
