@@ -21,9 +21,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.x96max_token }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref_name }}
-          body: |
-            Changes in this Release
+          uses: softprops/action-gh-release@v2.0.9
           files: ${{ github.workspace }}/x96-${{ github.ref_name }}.zip
 
